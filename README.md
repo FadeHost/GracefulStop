@@ -37,7 +37,7 @@ Every text, the marks and the thresholds are in `config.yml`. Colours use `&` co
 
 ## Builds
 
-Every push to `main` is compiled by [FadeHost Builds](https://fadehost.com/builds/), the free build service for public plugin and mod repositories on GitHub. The result is a page with every build, its log and its jar, and one link that always serves the newest one:
+Every push to `main` is compiled within a few minutes by [FadeHost Builds](https://fadehost.com/builds/), the free build service for public plugin and mod repositories on GitHub. The result is a page with every build, its log and its jar, and one link that always serves the newest one:
 
 https://builds.fadehost.net/FadeHost/GracefulStop/
 
