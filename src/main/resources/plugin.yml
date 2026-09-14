@@ -1,0 +1,24 @@
+name: GracefulStop
+version: '${project.version}'
+main: com.fadehost.gracefulstop.GracefulStopPlugin
+api-version: '1.13'
+author: FadeHost
+description: Warn players with a countdown before the server stops or restarts.
+website: https://github.com/FadeHost/GracefulStop
+
+commands:
+  gstop:
+    description: Stop the server after a countdown.
+    usage: /<command> <seconds|now|cancel|status|reload> [reason]
+    aliases: [gracefulstop, stopin]
+    permission: gracefulstop.use
+  grestart:
+    description: Restart the server after a countdown.
+    usage: /<command> <seconds|now|cancel|status> [reason]
+    aliases: [gracefulrestart, restartin]
+    permission: gracefulstop.use
+
+permissions:
+  gracefulstop.use:
+    description: Start, cancel and inspect countdowns.
+    default: op

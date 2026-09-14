@@ -1,0 +1,46 @@
+# GracefulStop
+#
+# Colours use & codes. Placeholders available in messages:
+#   {time}     "5 minutes", "1 minute 30 seconds", "10 seconds"
+#   {seconds}  the remaining seconds as a number
+#   {reason}   the reason given with the command, formatted with reason-format
+#              (empty when no reason was given)
+#   {verb}     stop / restart      {verbs}  stops / restarts     {verbing}  stopping / restarting
+
+# Seconds remaining at which the countdown is announced in chat (and as a title, see below).
+announce-at: [1800, 1200, 900, 600, 300, 180, 120, 60, 30, 15, 10, 5, 4, 3, 2, 1]
+
+# Below this many seconds the action bar counts every second. 0 disables the action bar.
+actionbar-below: 10
+
+# Below this many seconds each announcement also shows a title. 0 disables titles.
+title-below: 60
+
+# Played to every player at each announcement. Empty to disable.
+sound: BLOCK_NOTE_BLOCK_PLING
+
+# Kick everyone with the kick message before stopping, so nobody sees a bare "Server closed".
+kick-players: true
+
+# How /grestart restarts. Empty uses the server's own restart (spigot.yml -> settings.restart-script,
+# Paper and Spigot); without a restart script the server shuts down instead. Set a console command
+# here if your host provides one.
+restart-command: ""
+
+messages:
+  prefix: "&8[&bGracefulStop&8] "
+  announce: "&eThe server will {verb} in &c{time}&e.{reason}"
+  reason-format: " &7({reason})"
+  title: "&c{time}"
+  subtitle: "&funtil the server {verbs}"
+  actionbar: "&e{verb} in &c{seconds}s"
+  now: "&cThe server is {verbing} now.{reason}"
+  kick: "&cThe server is {verbing} now.\n&7{reason}"
+  cancelled: "&aThe scheduled {verb} was cancelled."
+  started: "&aCountdown started: {verb} in &f{time}&a.{reason}"
+  status: "&7{verb} in &f{time}&7.{reason}"
+  no-countdown: "&7No countdown is running."
+  already-running: "&cA countdown is already running ({verb} in {time}). Cancel it first."
+  invalid-seconds: "&cSeconds must be a whole number between 1 and 86400."
+  reloaded: "&aConfiguration reloaded."
+  usage: "&7/{label} <seconds> [reason]  &8|  &7/{label} now [reason]  &8|  &7/{label} cancel  &8|  &7/{label} status"
